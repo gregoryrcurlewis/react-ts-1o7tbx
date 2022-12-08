@@ -4,8 +4,8 @@ import './style.css';
 
 export default function App() {
   const [formFields, setFormFields] = useState([
-    { tag: 'kjndc', value: 'dc' },
-    { tag: 'kjndc', value: 'dc' },
+    { tag: '', value: '' },
+    { tag: '', value: '' },
   ])
 
   const handleFormChange = (event, index) => {
