@@ -4,7 +4,8 @@ import './style.css';
 
 export default function App() {
   const [formFields, setFormFields] = useState([
-    { name: '', age: '' },
+    { tag: 'kjndc', value: 'dc' },
+    { tag: 'kjndc', value: 'dc' },
   ])
 
   const handleFormChange = (event, index) => {
