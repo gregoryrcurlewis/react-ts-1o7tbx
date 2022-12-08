@@ -5,7 +5,9 @@ import './style.css';
 export default function App() {
   const [formFields, setFormFields] = useState([
     { tag: '', value: '' },
-    { tag: '', value: '' },
+  ])
+  const [listItems, setListItems] = useState([
+    { tag: 'h', value: 'dsc' },
   ])
 
   const handleFormChange = (event, index) => {
@@ -17,13 +19,16 @@ export default function App() {
   const submit = (e) => {
     e.preventDefault();
     console.log(formFields)
-    alert(formFields)
+    // alert(formFields)
+    // const data = formFields
+    // setListItems(data)
+    setFormFields([{ tag: '', value: '' },])
   }
 
   const addFields = () => {
     let object = {
-      name: '',
-      age: ''
+      tag: '',
+      value: ''
     }
 
     setFormFields([...formFields, object])
@@ -41,16 +46,16 @@ export default function App() {
             return (
               <div key={index}>
                 <input
-                  name='name'
-                  placeholder='Name'
+                  name='tag'
+                  placeholder='tag'
                   onChange={event => handleFormChange(event, index)}
-                  value={form.name}
+                  value={form.tag}
                 />
                 <input
-                  name='age'
-                  placeholder='Age'
+                  name='value'
+                  placeholder='value'
                   onChange={event => handleFormChange(event, index)}
-                  value={form.age}
+                  value={form.value}
                 />
                 <button onClick={() => removeFields(index)}>Remove</button>
               </div>
@@ -60,6 +65,10 @@ export default function App() {
         <button onClick={addFields}>Add More..</button>
         <br />
         <button onClick={submit}>Submit</button>
+        <hr/>
+        {/* <ul>
+        {listItems && listItems.map(i => <li>{i.tag} - {i.value}</li>)}
+        </ul> */}
       </div>
     );
 }
